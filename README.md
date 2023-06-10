@@ -15,10 +15,9 @@ docker compose up -d
 ## Install NPM
 
 ```
-docker compose exec -it challenge npm install  --legacy-peer-deps
+docker compose exec -it challenge npm install
 ```
 
-Note: webpack is giving an issue because of the version, that is why it needs the --legacy-peers-deps
 
 ## Serve
 
