@@ -28,8 +28,8 @@ docker compose exec -it challenge npm run serve
 Then visit http//localhost/
 
 
-## Compile assets
+## Run tests
 
 ```
-docker compose exec -it challenge npm run build
+docker compose exec -it challenge npm run test
 ```

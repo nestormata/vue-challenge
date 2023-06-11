@@ -1,7 +1,9 @@
 import App from '../src/App.vue';
-import { mount } from "@vue/test-utils";
+import { render, screen } from "@testing-library/vue";
+import '@testing-library/jest-dom';
 
-test("App renders",  () => {
-    const wrapper = mount(App);
-    expect(wrapper.text()).toContain("Maria Carter");
+it("App renders",  () => {
+    render(App);
+    const headerElement = screen.getByText(/maria carter/i);
+    expect(headerElement).toBeInTheDocument();
 });
