@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <div class="info">
+  <div class="athlete-report">
+    <div class="athlete-info">
+      <img :src="athlete.profile_image" />
       <h2>{{athlete.name}}</h2>
       <ul>
         <li>
@@ -33,6 +34,8 @@
 </template>
 
 <script>
+import '../assets/styles/academy-fit-report.css';
+
 export default {
   name: "AcademicFitReport",
   props: {

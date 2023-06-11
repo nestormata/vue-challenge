@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./_variables.css";
+
+.athlete-report {
+    .athlete-info {
+        @apply grid grid-cols-12 grid-rows-4 gap-x-4;
+        height: 100px;
+        img {
+            @apply rounded-full h-24 w-24 flex items-center justify-center row-span-4;
+        }
+        h2 {
+            @apply col-span-11;
+            color: lightblue;
+        }
+        ul {
+            height: 75px;
+            @apply col-span-5 row-span-2 flex flex-1 flex-wrap flex-col;
+            li {
+                label {
+                    @apply font-bold;
+                }
+            }
+        }
+    }
+}
