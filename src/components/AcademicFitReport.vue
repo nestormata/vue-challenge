@@ -30,19 +30,26 @@
         </li>
       </ul>
     </div>
+    <table class="athlete-table">
+        <tr>
+            <th>School Name</th>
+            <th>School Name</th>
+            <th>School Name</th>
+            <th>School Name</th>
+            <th>School Name</th>
+            <th>School Name</th>
+        </tr>
+    </table>
   </div>
 </template>
 
-<script>
+<script setup>
 import '../assets/styles/academy-fit-report.css';
 
-export default {
-  name: "AcademicFitReport",
-  props: {
+defineProps({
     athlete: {
       type: Object,
       required: false
     }
-  }
-};
+  });
 </script>

@@ -1,6 +1,11 @@
 @layer base {
+    html {
+        font-family: Roboto, sans-serif, system-ui;
+    }
     body {
-        @apply bg-white p-10 text-black;
+        @apply bg-white text-black p-4 h-screen text-base;
+        border-top: 8px solid var(--frame-color);
+        border-bottom: 8px solid var(--frame-color);
     }
     .container {
 
