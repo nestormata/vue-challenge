@@ -4,7 +4,11 @@
         <td>{{ row.division }}</td>
         <td>{{ row.conference }}</td>
         <td>{{ row.ranking }}</td>
-        <AcademicFitReportRowGPA :gpa="row.gpa" />
+        <td>{{ row.gpa.min }}</td>
+        <td>{{ row.gpa['25%'] }}</td>
+        <AcademicFitReportGPAColumn :gpa="row.gpa['50%']" />
+        <td>{{ row.gpa['75%'] }}</td>
+        <td>{{ row.gpa.max }}</td>
         <td>
             <template v-if="row.sat.reading.min == 'N/A'">Not Reported</template>
             <template v-else>{{ row.sat.reading.min }}-{{ row.sat.reading.max }}</template>
@@ -21,7 +25,7 @@
 </template>
 
 <script setup>
-import AcademicFitReportRowGPA from './AcademicFitReportRowGPA.vue';
+import AcademicFitReportGPAColumn from './AcademicFitReportGPAColumn.vue';
 
 defineProps({
     row: {

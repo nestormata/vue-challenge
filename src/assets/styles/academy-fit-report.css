@@ -5,20 +5,57 @@
 
 .athlete-report {
     .athlete-info {
-        @apply grid grid-cols-12 grid-rows-4 gap-x-4 bg-no-repeat bg-right bg-contain;
-        height: 100px;
-        background-image: url('../images/sr-insights.png');
-        background-size: 240px auto;
-        img {
-            @apply rounded-full h-24 w-24 flex items-center justify-center row-span-4;
+        @apply gap-x-4
+            flex flex-col justify-center
+            sm:grid
+            sm:grid-cols-12 sm:grid-rows-6
+            md:grid-rows-4;
+        min-height: 100px;
+        .image-profile {
+            @apply rounded-full h-24 w-24 flex items-center justify-center text-xl 
+                mx-auto
+                sm:row-span-3 sm:col-span-2
+                md:row-span-full md:col-span-2 xl:col-span-1;
+            overflow: hidden;
+            img {
+                @apply h-24 w-24;
+            }
+            &.initials-1 {
+                background-color: var(--initials-bg-1);
+            }
+            &.initials-2 {
+                background-color: var(--initials-bg-2);
+            }
+            &.initials-3 {
+                background-color: var(--initials-bg-3);
+            }
+            &.initials-4 {
+                background-color: var(--initials-bg-4);
+            }
+            &.initials-5 {
+                background-color: var(--initials-bg-5);
+            }
+            &.initials-6 {
+                background-color: var(--initials-bg-6);
+            }
         }
         h2 {
-            @apply col-span-11 font-bold text-lg;
+            @apply 
+                mx-auto
+                sm:col-span-4 sm:col-start-1 sm:row-start-4 sm:ml-0
+                md:col-span-4 md:col-start-3 md:row-start-1
+                xl:col-start-2
+                font-bold text-lg;
             color: var(--athlete-name-color);
         }
         ul {
             height: 75px;
-            @apply col-span-6 row-span-4 flex flex-1 flex-wrap flex-row;
+            @apply 
+                sm:row-start-5 sm:col-start-1 sm:col-span-full sm:row-span-4
+                md:col-span-5 md:row-span-3 md:col-start-3 md:row-start-2
+                lg:col-span-8 lg:row-span-3 lg:col-start-3 lg:row-start-2
+                xl:col-start-2 xl:col-span-6
+                flex flex-1 flex-wrap flex-row;
             li {
                 margin-right: 1em;
                 min-width: 15em;
@@ -27,5 +64,22 @@
                 }
             }
         }
+        h3 {
+            @apply 
+                order-first bg-center mx-auto
+                sm:row-span-4 sm:col-start-6 sm:row-start-1 sm:mr-0
+                md:row-span-full md:col-start-8 md:row-start-1
+                lg:col-start-10
+                bg-no-repeat sm:bg-right bg-top bg-contain;
+            width: 240px;
+            height: 100px;
+            padding-top: 70px;
+            text-align: right;
+            background-image: url('../images/sr-insights.png');
+            background-size: 240px auto;
+        }
+    }
+    .footnote {
+        @apply text-sm pt-10;
     }
 }

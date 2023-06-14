@@ -1,30 +1,37 @@
 <template>
-    <table class="athlete-table">
-        <thead>
-            <tr>
-                <th>School Name</th>
-                <th>Athletic Div</th>
-                <th>Conference</th>
-                <th>Ranking</th>
-                <th>
-                    <div>GPA</div>
-                    <div>
-                        <span>Min</span>
-                        <span>25%</span>
-                        <span>50%</span>
-                        <span>75%</span>
-                        <span>Max</span>
-                    </div>
-                </th>
-                <th>SAT Reading</th>
-                <th>SAT Math</th>
-                <th>ACT Composite</th>
-            </tr>
-        </thead>
-        <tbody>
-            <AcademicFitReportRow v-for="(row, index) in report" :row="row" :key="index" />
-        </tbody>
-    </table>
+    <div class="athlete-table-container">
+        <table class="athlete-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">School Name</th>
+                    <th rowspan="2">Athletic Div</th>
+                    <th rowspan="2">Conference</th>
+                    <th rowspan="2">
+                        Ranking<sup>*</sup>
+                        <span>(DI NCAA)</span>
+                        <span>(DI & DIII Hero Sports)</span>
+                    </th>
+                    <th colspan="5">GPA<sup>**</sup></th>
+                    <th>SAT Reading<sup>***</sup></th>
+                    <th>SAT Math<sup>***</sup></th>
+                    <th>ACT Composite<sup>***</sup></th>
+                </tr>
+                <tr>
+                    <th class="gpa-header">Min</th>
+                    <th class="gpa-header">25%</th>
+                    <th class="gpa-header">50%</th>
+                    <th class="gpa-header">75%</th>
+                    <th class="gpa-header">Max</th>
+                    <th>25%-75%</th>
+                    <th>25%-75%</th>
+                    <th>25%-75%</th>
+                </tr>
+            </thead>
+            <tbody>
+                <AcademicFitReportRow v-for="(row, index) in report" :row="row" :key="index" />
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script setup>
